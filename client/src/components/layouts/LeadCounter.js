@@ -1,6 +1,6 @@
 import React from "react";
 
-const GuestCounter = () => {
+const LeadCounter = () => {
   return (
     <div>
       <table>
@@ -21,7 +21,7 @@ const GuestCounter = () => {
             <td>0</td>
           </tr>
           <tr>
-            <th>Sold</th>
+            <th>Sale-Pending</th>
             <td>0</td>
             <td>0</td>
           </tr>
@@ -36,4 +36,4 @@ const GuestCounter = () => {
   );
 };
 
-export default GuestCounter;
+export default LeadCounter;

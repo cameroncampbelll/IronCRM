@@ -1,12 +1,13 @@
 import React from "react";
 
-const GuestForm = () => {
+const LeadForm = () => {
   return (
     <div className="invite-section">
       <h1>Add Contact</h1>
       <form>
         <input type="text" placeholder="Name" name="name" />
         <input type="text" placeholder="Phone Number" name="Phone" />
+        <input type="text" placeholder="Email" name="email" />
         <input type="text" placeholder="Notes" name="notes" />
         <p className="options-label">Contact Type</p>
         <div className="options">
@@ -19,7 +20,7 @@ const GuestForm = () => {
             <input type="radio" name="lead" value="Contacted" />
           </label>
           <label className="container">
-            Sold
+            Sale-Pending
             <input type="radio" name="lead" value="Non-contacted" />
           </label>
         </div>
@@ -28,4 +29,4 @@ const GuestForm = () => {
     </div>
   );
 };
-export default GuestForm;
+export default LeadForm;
