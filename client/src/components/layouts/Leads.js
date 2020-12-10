@@ -7,7 +7,7 @@ const Leads = () => {
   return (
     <div>
       {leads.map((lead) => (
-        <Lead key={lead.id} />
+        <Lead key={lead.id} lead={lead} />
       ))}
     </div>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 
-const Lead = () => {
+const Lead = ({ lead }) => {
+  // const { name, phone, contactType, notes, isSold } = lead;
   return (
     <div className="lead-card">
       <div className="card-head">
