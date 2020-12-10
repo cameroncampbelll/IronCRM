@@ -4,7 +4,7 @@ const LeadSearch = () => {
   return (
     <div>
       <input type="text" className="search" placeholder="Search for Contact" />
-      <i className="fas fa-search search-icon" />
+      <i className="" />
     </div>
   );
 };

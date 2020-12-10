@@ -1,6 +1,9 @@
 * {
   text-decoration: none;
 }
+body {
+  font-family: "Monterrat", sans-serif;
+}
 
 .iron-logo {
   margin-top: 1px;
@@ -12,7 +15,7 @@
   margin-top: -15px;
   padding-bottom: 5px;
 }
-
+/* nav bar */
 .navbar {
   display: flex;
   flex-direction: row;
@@ -28,4 +31,11 @@
   flex-direction: row;
   justify-content: space-evenly;
   width: 190px;
+}
+
+/* add contact */
+form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }

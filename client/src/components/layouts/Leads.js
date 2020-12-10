@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import LeadContext from "../../context/LeadContext";
 import Lead from "./Lead";
 
 const Leads = () => {
+  const { leads } = useContext(LeadContext);
   return (
     <div>
-      <Lead />
+      {leads.map((lead) => (
+        <Lead key={lead.id} />
+      ))}
     </div>
   );
 };
