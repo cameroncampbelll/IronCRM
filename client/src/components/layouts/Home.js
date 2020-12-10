@@ -3,6 +3,7 @@ import LeadForm from "./LeadForm";
 import LeadCounter from "./LeadCounter";
 import LeadFilter from "./LeadFilter";
 import LeadSearch from "./LeadSearch";
+import Leads from "./Leads";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <LeadForm />
         <LeadCounter />
       </div>
+      <Leads />
     </div>
   );
 };

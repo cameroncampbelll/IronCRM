@@ -13,7 +13,7 @@ const Navbar = () => {
         <li>
           <a href="#!">
             <span className="sm-hide">Logout</span>
-            <i className="fas fa-sign-out-alt"></i>
+            <i className=""></i>
           </a>
         </li>
       </ul>
