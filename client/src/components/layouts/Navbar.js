@@ -5,9 +5,10 @@ const Navbar = () => {
     <div className="navbar">
       <div className="logo">
         <h1>IronCRM</h1>
+        <img src="../images/iron-crm-logo.png" alt="" className="iron-logo" />
         <p>Made by Cameron Campbell + Brandon Garrett</p>
       </div>
-      <ul>
+      <ul id="nav-buttons">
         <li>Hello...</li>
         <span className="sm-hide">|</span>
         <li>

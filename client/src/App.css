@@ -1,13 +1,34 @@
 * {
+  text-decoration: none;
   margin: 0;
 }
 body {
   font-family: "Monterrat", sans-serif;
 }
-.navbar {
-  background-color: rgb(111, 121, 131);
-  margin-bottom: 50px;
+
+.iron-logo {
+  background-color: black;
+  size: 50px, 50px;
 }
+/* nav bar */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #9a9a9a;
+  margin-bottom: 30px;
+}
+
+#nav-buttons {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 190px;
+}
+
+/* add contact */
 form {
   display: flex;
   flex-direction: column;

@@ -11,7 +11,7 @@ const Lead = () => {
           </label>
         </div>
         <div>
-          <button>EDIT</button>
+          <button>Edit</button>
           <button>Remove</button>
         </div>
       </div>

@@ -21,7 +21,7 @@ const LeadForm = () => {
           </label>
           <label className="container">
             Sale-Pending
-            <input type="radio" name="lead" value="Non-contacted" />
+            <input type="radio" name="lead" value="Sale-Pending" />
           </label>
         </div>
         <input type="submit" value="Add Contact" className="btn"></input>
