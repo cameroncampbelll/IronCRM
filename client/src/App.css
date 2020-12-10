@@ -1,14 +1,19 @@
 * {
   text-decoration: none;
-  margin: 0;
 }
 body {
   font-family: "Monterrat", sans-serif;
 }
 
 .iron-logo {
-  background-color: black;
-  size: 50px, 50px;
+  margin-top: 1px;
+  padding: 20px;
+  height: 80px;
+}
+
+.madeby {
+  margin-top: -15px;
+  padding-bottom: 5px;
 }
 /* nav bar */
 .navbar {
@@ -16,8 +21,8 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #9a9a9a;
-  margin-bottom: 30px;
+  background-color: #9b9b9b;
+  padding: 0 20px;
 }
 
 #nav-buttons {
