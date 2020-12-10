@@ -1,7 +1,15 @@
 * {
   margin: 0;
 }
+body {
+  font-family: "Monterrat", sans-serif;
+}
 .navbar {
   background-color: rgb(111, 121, 131);
   margin-bottom: 50px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
