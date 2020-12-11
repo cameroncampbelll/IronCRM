@@ -1,7 +1,7 @@
 import React from "react";
 
 const Lead = ({ lead }) => {
-  // const { name, phone, contactType, notes, isSold } = lead;
+  const { name, phone, contactType, email, notes, isSold } = lead;
   return (
     <div className="lead-card">
       <div className="card-head">
@@ -17,17 +17,14 @@ const Lead = ({ lead }) => {
         </div>
       </div>
       <div className="card-body">
-        <h2>John Doe</h2>
-        <span>Non-Contacted</span>
+        <h2>{name}</h2>
+        <span>{contactType}</span>
         <div className="contact">
-          <p>800-867-5309</p>
-          <p>email@email.com</p>
+          <p>{phone}</p>
+          <p>{email}</p>
         </div>
         <div className="notes">
-          <p>
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum
-          </p>
+          <p>{notes}</p>
         </div>
       </div>
     </div>
