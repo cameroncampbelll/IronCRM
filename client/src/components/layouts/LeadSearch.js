@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
+import LeadContext from "../../context/LeadContext";
 
 const LeadSearch = () => {
+  const { searchLead, clearSearch } = useContext(LeadContext);
+  const searchValue = useRef("");
+  const handleChange = (event) => {
+    if (searchValue.current.value !== "") {
+      searchLead(event.target.value);
+    } else {
+      clearSearch();
+    }
+  };
   return (
     <div>
-      <input type="text" className="search" placeholder="Search for Contact" />
+      <input
+        ref={searchValue}
+        type="text"
+        onChange={handleChange}
+        className="search"
+        placeholder="Search for Contact"
+      />
       <i className="" />
     </div>
   );

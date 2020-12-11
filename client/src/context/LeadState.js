@@ -1,11 +1,12 @@
 import React, { useReducer } from "react";
 import LeadContext from "./LeadContext";
 import LeadReducer from "./LeadReducer";
-import { TOGGLE_FILTER } from "../types";
+import { TOGGLE_FILTER, SEARCH_LEAD, CLEAR_SEARCH } from "../types";
 
 const LeadState = (props) => {
   const initialState = {
     filterLead: false,
+    search: null,
     leads: [
       {
         id: 1,
@@ -33,13 +34,27 @@ const LeadState = (props) => {
       type: TOGGLE_FILTER,
     });
   };
+  const searchLead = (lead) => {
+    dispatch({
+      type: SEARCH_LEAD,
+      payload: lead,
+    });
+  };
+  const clearSearch = () => {
+    dispatch({
+      type: CLEAR_SEARCH,
+    });
+  };
   //   console.log(state.filterLead);
   return (
     <LeadContext.Provider
       value={{
         leads: state.leads,
         filterLead: state.filterLead,
+        search: state.search,
         toggleFilter,
+        searchLead,
+        clearSearch,
       }}
     >
       {props.children}

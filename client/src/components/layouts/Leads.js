@@ -3,12 +3,14 @@ import LeadContext from "../../context/LeadContext";
 import Lead from "./Lead";
 
 const Leads = () => {
-  const { leads } = useContext(LeadContext);
+  const { leads, filterLead, search } = useContext(LeadContext);
   return (
     <div>
-      {leads.map((lead) => (
-        <Lead key={lead.id} lead={lead} />
-      ))}
+      {search !== null
+        ? search.map((lead) => <Lead key={lead.id} lead={lead} />)
+        : leads
+            .filter((lead) => !filterLead || lead.isSold)
+            .map((lead) => <Lead key={lead.id} lead={lead} />)}
     </div>
   );
 };

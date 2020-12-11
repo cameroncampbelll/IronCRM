@@ -1,7 +1,18 @@
-import { TOGGLE_FILTER } from "../types";
+import { TOGGLE_FILTER, SEARCH_LEAD, CLEAR_SEARCH } from "../types";
 
 export default (state, { type, payload }) => {
   switch (type) {
+    case SEARCH_LEAD:
+      const reg = new RegExp(`${payload}`, "gi");
+      return {
+        ...state,
+        search: state.leads.filter((lead) => lead.name.match(reg)),
+      };
+    case CLEAR_SEARCH:
+      return {
+        ...state,
+        search: null,
+      };
     case TOGGLE_FILTER:
       return {
         ...state,
