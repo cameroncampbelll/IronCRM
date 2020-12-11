@@ -3,13 +3,15 @@ import React from "react";
 const LeadForm = () => {
   return (
     <div className="invite-section">
-      <h1>Add Contact</h1>
+      <h1 className="add-contact">Add Contact</h1>
       <form>
-        <input type="text" placeholder="Name" name="name" />
-        <input type="text" placeholder="Phone Number" name="Phone" />
-        <input type="text" placeholder="Email" name="email" />
-        <input type="text" placeholder="Notes" name="notes" />
-        <p className="options-label">Contact Type</p>
+        <div className="add-field">
+          <input type="text" placeholder="Name" name="name" />
+          <input type="text" placeholder="Phone Number" name="Phone" />
+          <input type="text" placeholder="Email" name="email" />
+          <input type="text" placeholder="Notes" name="notes" />
+        </div>
+        <h2 className="options-label">Contact Type</h2>
         <div className="options">
           <label className="container">
             Non-contacted

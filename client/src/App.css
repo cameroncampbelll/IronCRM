@@ -5,6 +5,13 @@ body {
   font-family: "Monterrat", sans-serif;
 }
 
+/* nav bar */
+
+.logo {
+  display: flex;
+  flex-direction: row;
+}
+
 .iron-logo {
   margin-top: 1px;
   padding: 20px;
@@ -12,10 +19,10 @@ body {
 }
 
 .madeby {
-  margin-top: -15px;
+  margin-top: 51px;
   padding-bottom: 5px;
 }
-/* nav bar */
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -31,11 +38,64 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   width: 190px;
+  color: white;
+}
+
+.madeby {
+  color: white;
+}
+
+.logout-button {
+  text-decoration: none;
+  color: white;
+}
+
+/* lead filter */
+
+.toggle {
+  display: flex;
+  align-items: center;
+  margin: 15px;
+}
+
+/* search bar */
+
+.search {
+  margin-left: 15px;
 }
 
 /* add */
+
+.add-contact {
+  margin-bottom: -1px;
+  margin-left: 15px;
+}
+
+.add-field {
+  display: flex;
+  flex-direction: column;
+  position: relative; 
+  width: 50%;
+  margin-left: 15px;
+}
+
 form {
   display: flex;
   flex-direction: column;
   position: relative;
+}
+
+/* contact type - leadform, leadcounter */
+
+.btn {
+  width: 25%;
+  margin-left: 15px;
+}
+
+.options-label {
+  margin-left: 15px;
+}
+
+.container {
+  padding-left: 15px;
 }
