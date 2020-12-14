@@ -25,7 +25,7 @@ const Lead = ({ lead }) => {
         <div className="notes">
           <p>{notes}</p>
           <div className="card-bottom-btns">
-            <label>
+            <label className="sold-check">
               Sold
               <input type="checkbox" onChange={handleIsSold} />
             </label>
