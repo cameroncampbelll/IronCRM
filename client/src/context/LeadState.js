@@ -1,7 +1,14 @@
 import React, { useReducer } from "react";
 import LeadContext from "./LeadContext";
 import LeadReducer from "./LeadReducer";
-import { TOGGLE_FILTER, SEARCH_LEAD, CLEAR_SEARCH, ADD_LEAD } from "../types";
+import {
+  TOGGLE_FILTER,
+  SEARCH_LEAD,
+  CLEAR_SEARCH,
+  ADD_LEAD,
+  REMOVE_LEAD,
+  UPDATE_LEAD,
+} from "../types";
 
 const LeadState = (props) => {
   const initialState = {
@@ -40,6 +47,20 @@ const LeadState = (props) => {
     });
   };
 
+  const removeLead = (id) => {
+    dispatch({
+      type: REMOVE_LEAD,
+      payload: id,
+    });
+  };
+
+  const updateLead = (lead) => {
+    dispatch({
+      type: UPDATE_LEAD,
+      payload: lead,
+    });
+  };
+
   const toggleFilter = () => {
     dispatch({
       type: TOGGLE_FILTER,
@@ -64,6 +85,8 @@ const LeadState = (props) => {
         filterLead: state.filterLead,
         search: state.search,
         addLead,
+        removeLead,
+        updateLead,
         toggleFilter,
         searchLead,
         clearSearch,

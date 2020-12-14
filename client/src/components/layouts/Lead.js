@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import LeadContext from "../../context/LeadContext";
 
 const Lead = ({ lead }) => {
-  const { name, phone, contactType, email, notes, isSold } = lead;
+  const { removeLead, updateLead } = useContext(LeadContext);
+  const { id, name, phone, contactType, email, notes, isSold } = lead;
+
+  const handleRemove = () => {
+    removeLead(id);
+  };
+  const handleIsSold = () => {
+    updateLead({ ...lead, isSold: !isSold });
+  };
   return (
     <div className="lead-card">
-      <div className="card-head">
+      <div className="card-head"></div>
 
-      </div>
       <div className="card-body">
         <h2>{name}</h2>
         <span>{contactType}</span>
@@ -16,13 +24,13 @@ const Lead = ({ lead }) => {
         </div>
         <div className="notes">
           <p>{notes}</p>
-          <div className='card-bottom-btns'>
+          <div className="card-bottom-btns">
             <label>
               Sold
-            <input type="checkbox" />
+              <input type="checkbox" onChange={handleIsSold} />
             </label>
             <button>Edit</button>
-            <button>Remove</button>
+            <button onClick={handleRemove}>Remove</button>
           </div>
         </div>
       </div>
