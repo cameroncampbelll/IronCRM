@@ -13,7 +13,7 @@ const LeadCounter = () => {
 
   return (
     <div>
-      <table>
+      <table className='lead-counter'>
         <tbody>
           <tr>
             <th>Contact Type</th>

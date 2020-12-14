@@ -5,16 +5,7 @@ const Lead = ({ lead }) => {
   return (
     <div className="lead-card">
       <div className="card-head">
-        <div>
-          <label>
-            Sold
-            <input type="checkbox" />
-          </label>
-        </div>
-        <div>
-          <button>Edit</button>
-          <button>Remove</button>
-        </div>
+
       </div>
       <div className="card-body">
         <h2>{name}</h2>
@@ -25,6 +16,14 @@ const Lead = ({ lead }) => {
         </div>
         <div className="notes">
           <p>{notes}</p>
+          <div className='card-bottom-btns'>
+            <label>
+              Sold
+            <input type="checkbox" />
+            </label>
+            <button>Edit</button>
+            <button>Remove</button>
+          </div>
         </div>
       </div>
     </div>

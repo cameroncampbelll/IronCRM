@@ -34,28 +34,28 @@ const LeadForm = () => {
       <h1 className="add-contact">Add Contact</h1>
       <form onSubmit={onSubmit}>
         <div className="add-field">
-          <input
+          <input className="add-comp"
             type="text"
             placeholder="Name"
             name="name"
             value={name}
             onChange={handleChange}
           />
-          <input
+          <input className="add-comp"
             type="text"
             placeholder="Phone Number"
             name="phone"
             value={phone}
             onChange={handleChange}
           />
-          <input
+          <input className="add-comp"
             type="text"
             placeholder="Email"
             name="email"
             value={email}
             onChange={handleChange}
           />
-          <input
+          <input className="add-comp"
             type="text"
             placeholder="Notes"
             name="notes"

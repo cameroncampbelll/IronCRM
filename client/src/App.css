@@ -28,7 +28,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #9b9b9b;
+  background-color: #bababa;
   padding: 0 20px;
 }
 
@@ -55,28 +55,38 @@ body {
 .toggle {
   display: flex;
   align-items: center;
-  margin: 15px;
+  margin: 35px;
+  margin-bottom: -10px;
 }
 
 /* search bar */
 
 .search {
-  margin-left: 15px;
+  margin-left: 35px;
 }
 
 /* add */
 
 .add-contact {
   margin-bottom: -1px;
-  margin-left: 15px;
+  margin-left: 35px;
 }
 
 .add-field {
   display: flex;
   flex-direction: column;
   position: relative; 
-  width: 50%;
-  margin-left: 15px;
+  margin-left: 35px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.add-comp {
+  display: flex;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 10px 10px;
+  width: 35%;
 }
 
 form {
@@ -89,13 +99,52 @@ form {
 
 .btn {
   width: 25%;
-  margin-left: 15px;
+  margin-top: 10px;
+  margin-left: 35px;
+  margin-bottom: 35px;
 }
 
 .options-label {
-  margin-left: 15px;
+  margin-left: 35px;
+  margin-bottom: 5px;
 }
 
 .container {
-  padding-left: 15px;
+  padding-left: 35px;
+}
+
+.lead-counter {
+  margin-left: 35px;
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+/* Contact cards */
+
+.lead-card {
+  background-color: #bababa;
+  border-radius: 25px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  padding: 0px 15px 15px 15px;
+  margin-top: 40px;
+  margin-left: 35px;
+  margin-bottom: 35px;
+  /* try something with line height? */
+}
+
+.card-bottom-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+}
+
+.all-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
