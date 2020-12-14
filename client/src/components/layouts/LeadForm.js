@@ -1,10 +1,24 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import LeadContext from "../../context/LeadContext";
 
 // this is where i left off on friday
 
 const LeadForm = () => {
-  const { addLead } = useContext(LeadContext);
+  const { addLead, editAble, updateLead, clearEdit } = useContext(LeadContext);
+  useEffect(() => {
+    if (editAble !== null) {
+      setLead(editAble);
+    } else {
+      setLead({
+        name: "",
+        phone: "",
+        email: "",
+        contactType: "Non-contacted",
+        notes: "",
+      });
+    }
+  }, [editAble]);
+
   const [lead, setLead] = useState({
     name: "",
     phone: "",
@@ -23,18 +37,26 @@ const LeadForm = () => {
   };
   const onSubmit = (event) => {
     event.preventDefault();
-    addLead(lead);
-    setLead({
-      name: "",
-      phone: "",
-      email: "",
-      contactType: "Non-contacted",
-      notes: "",
-    });
+    if (editAble !== null) {
+      updateLead(lead);
+      clearEdit();
+    } else {
+      addLead(lead);
+      setLead({
+        name: "",
+        phone: "",
+        email: "",
+        contactType: "Non-contacted",
+        notes: "",
+      });
+    }
   };
   return (
     <div className="invite-section">
-      <h1 className="add-contact">Add Contact</h1>
+      <h1 className="add-contact">
+        {" "}
+        {editAble !== null ? "Edit Contact" : "Add Contact"}
+      </h1>
       <form onSubmit={onSubmit}>
         <div className="add-field">
           <input
@@ -78,8 +100,8 @@ const LeadForm = () => {
               type="radio"
               name="lead"
               value="Non-contacted"
-              checked={contactType === "Non-contacted"}
               onChange={handleChange}
+              checked={contactType === "Non-contacted"}
             />
           </label>
           <label className="container">
@@ -89,6 +111,7 @@ const LeadForm = () => {
               name="lead"
               value="Contacted"
               onChange={handleChange}
+              checked={contactType === "Contacted"}
             />
           </label>
           <label className="container">
@@ -98,10 +121,23 @@ const LeadForm = () => {
               name="lead"
               value="Sale-Pending"
               onChange={handleChange}
+              checked={contactType === "Sale-Pending"}
             />
           </label>
         </div>
-        <input type="submit" value="Add Contact" className="btn"></input>
+        <input
+          type="submit"
+          value={editAble !== null ? "Update Lead" : "Add Contact"}
+          className="btn"
+        ></input>
+        {editAble !== null ? (
+          <input
+            onClick={clearEdit}
+            value="Cancel"
+            type="button"
+            className="btn clear"
+          />
+        ) : null}
       </form>
     </div>
   );

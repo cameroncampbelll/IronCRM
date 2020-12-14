@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import LeadContext from "../../context/LeadContext";
 
 const Lead = ({ lead }) => {
-  const { removeLead, updateLead } = useContext(LeadContext);
+  const { removeLead, updateLead, editLead } = useContext(LeadContext);
   const { id, name, phone, contactType, email, notes, isSold } = lead;
 
   const handleRemove = () => {
@@ -29,7 +29,7 @@ const Lead = ({ lead }) => {
               Sold
               <input type="checkbox" onChange={handleIsSold} />
             </label>
-            <button>Edit</button>
+            <button onClick={() => editLead(lead)}>Edit</button>
             <button onClick={handleRemove}>Remove</button>
           </div>
         </div>

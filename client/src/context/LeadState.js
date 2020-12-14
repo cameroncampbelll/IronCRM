@@ -8,12 +8,15 @@ import {
   ADD_LEAD,
   REMOVE_LEAD,
   UPDATE_LEAD,
+  EDIT_LEAD,
+  CLEAR_EDIT,
 } from "../types";
 
 const LeadState = (props) => {
   const initialState = {
     filterLead: false,
     search: null,
+    editAble: null,
     leads: [
       {
         id: 1,
@@ -31,7 +34,16 @@ const LeadState = (props) => {
         email: "email2@email.com",
         contactType: "Contacted",
         notes: "First contact explained wasnt interested",
-        isSold: true,
+        isSold: false,
+      },
+      {
+        id: 3,
+        name: "John Dope",
+        phone: "786 333 4321",
+        email: "email2@email.com",
+        contactType: "Sale-Pending",
+        notes: "First contact explained wasnt interested",
+        isSold: false,
       },
     ],
   };
@@ -61,6 +73,19 @@ const LeadState = (props) => {
     });
   };
 
+  const editLead = (lead) => {
+    dispatch({
+      type: EDIT_LEAD,
+      payload: lead,
+    });
+  };
+
+  const clearEdit = () => {
+    dispatch({
+      type: CLEAR_EDIT,
+    });
+  };
+
   const toggleFilter = () => {
     dispatch({
       type: TOGGLE_FILTER,
@@ -84,9 +109,12 @@ const LeadState = (props) => {
         leads: state.leads,
         filterLead: state.filterLead,
         search: state.search,
+        editAble: state.editAble,
         addLead,
         removeLead,
         updateLead,
+        editLead,
+        clearEdit,
         toggleFilter,
         searchLead,
         clearSearch,

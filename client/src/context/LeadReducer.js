@@ -5,6 +5,8 @@ import {
   ADD_LEAD,
   REMOVE_LEAD,
   UPDATE_LEAD,
+  EDIT_LEAD,
+  CLEAR_EDIT,
 } from "../types";
 
 export default (state, { type, payload }) => {
@@ -25,6 +27,16 @@ export default (state, { type, payload }) => {
         leads: state.leads.map((lead) =>
           lead.id === payload.id ? payload : lead
         ),
+      };
+    case EDIT_LEAD:
+      return {
+        ...state,
+        editAble: payload,
+      };
+    case CLEAR_EDIT:
+      return {
+        ...state,
+        editAble: null,
       };
     case SEARCH_LEAD:
       const reg = new RegExp(`${payload}`, "gi");
