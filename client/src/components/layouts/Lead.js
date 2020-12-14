@@ -25,12 +25,12 @@ const Lead = ({ lead }) => {
         <div className="notes">
           <p>{notes}</p>
           <div className="card-bottom-btns">
-            <label>
+            <label className='sold-check'>
               Sold
               <input type="checkbox" onChange={handleIsSold} />
             </label>
-            <button>Edit</button>
-            <button onClick={handleRemove}>Remove</button>
+            <button className='buttons'>Edit</button>
+            <button className='buttons' onClick={handleRemove}>Remove</button>
           </div>
         </div>
       </div>
