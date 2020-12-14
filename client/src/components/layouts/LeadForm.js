@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import LeadContext from "../../context/LeadContext";
 
 // this is where i left off on friday
 
 const LeadForm = () => {
+  const { addLead } = useContext(LeadContext);
   const [lead, setLead] = useState({
     name: "",
     phone: "",
@@ -21,6 +23,7 @@ const LeadForm = () => {
   };
   const onSubmit = (event) => {
     event.preventDefault();
+    addLead(lead);
     setLead({
       name: "",
       phone: "",
@@ -34,28 +37,32 @@ const LeadForm = () => {
       <h1 className="add-contact">Add Contact</h1>
       <form onSubmit={onSubmit}>
         <div className="add-field">
-          <input className="add-comp"
+          <input
+            className="add-comp"
             type="text"
             placeholder="Name"
             name="name"
             value={name}
             onChange={handleChange}
           />
-          <input className="add-comp"
+          <input
+            className="add-comp"
             type="text"
             placeholder="Phone Number"
             name="phone"
             value={phone}
             onChange={handleChange}
           />
-          <input className="add-comp"
+          <input
+            className="add-comp"
             type="text"
             placeholder="Email"
             name="email"
             value={email}
             onChange={handleChange}
           />
-          <input className="add-comp"
+          <input
+            className="add-comp"
             type="text"
             placeholder="Notes"
             name="notes"

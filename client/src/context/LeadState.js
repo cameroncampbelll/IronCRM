@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import LeadContext from "./LeadContext";
 import LeadReducer from "./LeadReducer";
-import { TOGGLE_FILTER, SEARCH_LEAD, CLEAR_SEARCH } from "../types";
+import { TOGGLE_FILTER, SEARCH_LEAD, CLEAR_SEARCH, ADD_LEAD } from "../types";
 
 const LeadState = (props) => {
   const initialState = {
@@ -31,6 +31,15 @@ const LeadState = (props) => {
 
   const [state, dispatch] = useReducer(LeadReducer, initialState);
 
+  const addLead = (lead) => {
+    lead.id = Date.now();
+    lead.isSold = false;
+    dispatch({
+      type: ADD_LEAD,
+      payload: lead,
+    });
+  };
+
   const toggleFilter = () => {
     dispatch({
       type: TOGGLE_FILTER,
@@ -54,6 +63,7 @@ const LeadState = (props) => {
         leads: state.leads,
         filterLead: state.filterLead,
         search: state.search,
+        addLead,
         toggleFilter,
         searchLead,
         clearSearch,

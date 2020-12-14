@@ -1,7 +1,12 @@
-import { TOGGLE_FILTER, SEARCH_LEAD, CLEAR_SEARCH } from "../types";
+import { TOGGLE_FILTER, SEARCH_LEAD, CLEAR_SEARCH, ADD_LEAD } from "../types";
 
 export default (state, { type, payload }) => {
   switch (type) {
+    case ADD_LEAD:
+      return {
+        ...state,
+        leads: [...state.leads, payload],
+      };
     case SEARCH_LEAD:
       const reg = new RegExp(`${payload}`, "gi");
       return {
