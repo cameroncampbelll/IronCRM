@@ -98,30 +98,30 @@ const LeadForm = () => {
             Non-contacted
             <input
               type="radio"
-              name="lead"
+              name="Non-contacted"
               value="Non-contacted"
               onChange={handleChange}
-              checked={contactType === "Non-contacted"}
+              checked={lead.contactType === "Non-contacted"}
             />
           </label>
           <label className="container">
             Contacted
             <input
               type="radio"
-              name="lead"
+              name="Contacted"
               value="Contacted"
               onChange={handleChange}
-              checked={contactType === "Contacted"}
+              checked={lead.contactType === "Contacted"}
             />
           </label>
           <label className="container">
             Sale-Pending
             <input
               type="radio"
-              name="lead"
+              name="Sale-Pending"
               value="Sale-Pending"
               onChange={handleChange}
-              checked={contactType === "Sale-Pending"}
+              checked={lead.contactType === "Sale-Pending"}
             />
           </label>
         </div>
