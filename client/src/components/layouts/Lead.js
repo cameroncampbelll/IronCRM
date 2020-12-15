@@ -29,8 +29,8 @@ const Lead = ({ lead }) => {
               Sold
               <input type="checkbox" onChange={handleIsSold} />
             </label>
-            <button onClick={() => editLead(lead)}>Edit</button>
-            <button onClick={handleRemove}>Remove</button>
+            <button className='buttons' onClick={() => editLead(lead)}>Edit</button>
+            <button className='buttons' onClick={handleRemove}>Remove</button>
           </div>
         </div>
       </div>
