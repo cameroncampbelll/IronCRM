@@ -50,4 +50,38 @@ router.post(
   }
 );
 
+router.delete("/:id", auth, async (req, res) => {
+  try {
+    let lead = await Lead.findById(req.params.id);
+    if (!lead) {
+      return res.status(404).json({ msg: "Lead not found" });
+    }
+    await Lead.findByIdAndRemove(req.params.id);
+    res.send("Lead removed");
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+});
+
+router.put("/:id", auth, async (req, res) => {
+  const { name, phone, email, contactType, notes, isSold } = req.body;
+  const updatedLead = { name, phone, email, contactType, notes, isSold };
+  try {
+    let lead = await Lead.findById(req.params.id);
+    if (!lead) {
+      return res.status(404).json({ msg: "Lead not found" });
+    }
+    lead = await Lead.findByIdAndUpdate(
+      req.params.id,
+      { $set: updatedLead },
+      { new: true }
+    );
+    res.send(lead);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+});
+
 module.exports = router;
