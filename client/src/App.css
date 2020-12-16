@@ -5,6 +5,23 @@ body {
   font-family: "Monterrat", sans-serif;
 }
 
+/* login page */
+
+.login-title {
+  margin-top: 35px;
+  margin-left: 35px;
+}
+
+.already {
+  margin-left: 35px;
+}
+
+.sign-up-btn {
+  text-decoration: none;
+  color: #32c2fe;
+}
+
+
 /* nav bar */
 
 .logo {
@@ -47,7 +64,7 @@ body {
 
 .logout-button {
   text-decoration: none;
-  color: white;
+  color: #32c2fe;
 }
 
 /* lead filter */
@@ -62,7 +79,11 @@ body {
 /* search bar */
 
 .search {
+  margin-top: 5px;
   margin-left: 35px;
+  border: none;
+  border-bottom: 2px solid #32c2fe;
+  padding: 10px 10px;
 }
 
 /* add */
@@ -83,10 +104,13 @@ body {
 
 .add-comp {
   display: flex;
+  margin-left: 35px;
   margin-right: 10px;
   margin-top: 10px;
   padding: 10px 10px;
   width: 35%;
+  border: none;
+  border-bottom: 2px solid #32c2fe;
 }
 
 form {
@@ -129,9 +153,11 @@ form {
 }
 
 .lead-counter {
+  width: 30%;
   margin-left: 35px;
   display: flex;
   justify-content: flex-start;
+  line-height: 1.4em;
 }
 
 /* Contact cards */
