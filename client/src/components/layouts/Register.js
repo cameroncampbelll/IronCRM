@@ -77,7 +77,7 @@ const Register = (props) => {
             <span>X</span>
           </button>
         )}
-        <p>
+        <p className='already-account'>
           Already have an account?{" "}
           <Link className="sign-up-btn" to="/login">
             Log in

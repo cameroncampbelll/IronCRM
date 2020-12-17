@@ -7,6 +7,10 @@ body {
 
 /* login page */
 
+.dont-account {
+  color: #6b6b6b;
+}
+
 .login-fields {
   margin-bottom: 40px;
   display: flex;
@@ -16,10 +20,14 @@ body {
 }
 
 .login-title {
+  color: #6b6b6b;
   display: flex;
   justify-content: center;
   margin-top: 35px;
   margin-left: 35px;
+}
+.already-account {
+  color: #6b6b6b;
 }
 
 .question {
@@ -74,6 +82,7 @@ body {
   width: 40%;
   border: none;
   border-bottom: 2px solid #32c2fe;
+  /* background: none; */
 }
 
 .question {
@@ -82,6 +91,11 @@ body {
 }
 
 /* nav bar */
+
+.register {
+  text-decoration: none;
+  color: #32c2fe;
+}
 
 .logo {
   display: flex;
@@ -119,6 +133,11 @@ body {
 
 .madeby {
   color: white;
+}
+
+.login {
+  text-decoration: none;
+  color: #32c2fe;
 }
 
 .logout-button {
@@ -200,6 +219,7 @@ body {
   width: 40%;
   border: none;
   border-bottom: 2px solid #32c2fe;
+  /* background: none; */
 }
 
 form {

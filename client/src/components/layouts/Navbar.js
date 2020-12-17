@@ -24,13 +24,13 @@ const Navbar = () => {
 
   const authLinks = (
     <Fragment>
-      <li>
-        <Link to="/register">Register</Link>
-      </li>
+
+      <Link className='register' to="/register">Register</Link>
+
       <span>|</span>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
+
+      <Link className='login' to="/login">Log in</Link>
+
     </Fragment>
   );
 

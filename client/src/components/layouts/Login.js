@@ -63,7 +63,7 @@ const Login = (props) => {
             <span>X</span>
           </button>
         )}
-        <p>
+        <p className='dont-account' >
           Don't have an account?{" "}
           <Link to="/register" className="sign-up-btn">
             Sign Up
