@@ -136,7 +136,7 @@ const LeadForm = () => {
               onClick={clearEdit}
               value="Cancel"
               type="button"
-              className="btn-clear"
+              className="btn"
             />
           ) : null}
         </div>

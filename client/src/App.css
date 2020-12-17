@@ -220,6 +220,8 @@ form {
   width: 25%;
   margin-top: 10px;
   margin-bottom: 35px;
+  margin-left: 10px;
+  margin-right: 10px;
   text-align: center;
   text-decoration: none;
   display: flex;
