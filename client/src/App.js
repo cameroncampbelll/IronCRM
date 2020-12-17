@@ -7,23 +7,30 @@ import LeadState from "./context/LeadState";
 import AuthState from "./context/authContext/AuthState";
 import Register from "./components/layouts/Register";
 import Login from "./components/layouts/Login";
+import PrivateRoute from "./routes/PrivateRoute";
+import setToken from "../src/utils/setToken";
+
+if (localStorage.token) {
+  setToken(localStorage.token);
+}
 
 function App() {
   return (
-    <AuthState>
-      <LeadState>
-        <Router>
+    <Router>
+      <AuthState>
+        <LeadState>
           <div>
             <Navbar />
             <Switch>
+              {/* <PrivateRoute exact path="/" component={Home} /> */}
               <Route exact path="/" component={Home} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
             </Switch>
           </div>
-        </Router>
-      </LeadState>
-    </AuthState>
+        </LeadState>
+      </AuthState>
+    </Router>
   );
 }
 

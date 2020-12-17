@@ -2,19 +2,45 @@ import React, { useReducer } from "react";
 import axios from "axios";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
+import setToken from "../../utils/setToken";
+import { useHistory } from "react-router-dom";
 import {
   SUCCESS_REGISTER,
   SUCCESS_LOGIN,
   FAIL_REGISTER,
   FAIL_LOGIN,
+  SET_ERROR,
+  LOG_OUT,
+  SET_USER,
+  AUTH_ERROR,
 } from "../../types";
 
 const AuthState = (props) => {
   const initialState = {
+    users: null,
     userAuth: null,
     errors: null,
   };
   const [state, dispatch] = useReducer(authReducer, initialState);
+  const history = useHistory();
+  // get user
+  const getUser = async () => {
+    if (localStorage.token) {
+      setToken(localStorage.token);
+    }
+    try {
+      const res = await axios.get("/auth");
+      dispatch({
+        type: SET_USER,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: AUTH_ERROR,
+        payload: err,
+      });
+    }
+  };
 
   // register user
 
@@ -30,7 +56,11 @@ const AuthState = (props) => {
         type: SUCCESS_REGISTER,
         payload: res.data,
       });
+      // redirect here
+      debugger;
+      history.push("/");
     } catch (err) {
+      debugger;
       dispatch({
         type: FAIL_REGISTER,
         payload: err.response.data,
@@ -60,13 +90,32 @@ const AuthState = (props) => {
     }
   };
 
+  //   log out user
+
+  const logout = () => {
+    dispatch({
+      type: LOG_OUT,
+    });
+  };
+
+  const setError = (err) => {
+    dispatch({
+      type: SET_ERROR,
+      payload: err,
+    });
+  };
+
   return (
     <AuthContext.Provider
       value={{
+        user: state.user,
         userAuth: state.userAuth,
         errors: state.errors,
+        getUser: getUser,
         registerUser,
         loginUser,
+        logout,
+        setError,
       }}
     >
       {props.children}

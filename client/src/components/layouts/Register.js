@@ -1,9 +1,16 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "../../context/authContext/authContext";
 import { Link } from "react-router-dom";
 
-const Register = () => {
-  const { registerUser, userAuth, errors } = useContext(AuthContext);
+const Register = (props) => {
+  const { registerUser, userAuth, errors, setError } = useContext(AuthContext);
+  // redirected to home page
+  useEffect(() => {
+    if (userAuth) {
+      props.history.push("/");
+    }
+  }, [userAuth, props.history]);
+
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -19,7 +26,7 @@ const Register = () => {
   const submit = (e) => {
     e.preventDefault();
     if (password !== password2) {
-      console.log("Passwords dont match");
+      setError({ msg: "Passwords dont match" });
     } else {
       registerUser({ name, email, password });
     }
@@ -27,10 +34,10 @@ const Register = () => {
 
   return (
     <div className="register">
-      {/* <h1>Sign Up</h1> */}
-      <form className='register-form' onSubmit={submit}>
+      <h1 className="login-title">Sign Up</h1>
+      <form className="register-form" onSubmit={submit}>
         <input
-          className='register-inputs'
+          className="register-inputs"
           type="text"
           name="name"
           placeholder="Name"
@@ -38,7 +45,7 @@ const Register = () => {
           onChange={handleChange}
         />
         <input
-          className='register-inputs'
+          className="register-inputs"
           type="email"
           name="email"
           placeholder="Email"
@@ -46,7 +53,7 @@ const Register = () => {
           onChange={handleChange}
         />
         <input
-          className='register-inputs'
+          className="register-inputs"
           type="password"
           name="password"
           placeholder="Password"
@@ -54,7 +61,7 @@ const Register = () => {
           onChange={handleChange}
         />
         <input
-          className='register-inputs'
+          className="register-inputs"
           type="password"
           name="password2"
           placeholder="Confirm Password"
@@ -71,7 +78,10 @@ const Register = () => {
           </button>
         )}
         <p>
-          Already have an account? <Link className='sign-up-btn' to="/login">Log in</Link>{" "}
+          Already have an account?{" "}
+          <Link className="sign-up-btn" to="/login">
+            Log in
+          </Link>{" "}
         </p>
       </div>
     </div>

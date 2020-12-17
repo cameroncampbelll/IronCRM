@@ -7,10 +7,17 @@ import {
   UPDATE_LEAD,
   EDIT_LEAD,
   CLEAR_EDIT,
+  GET_LEADS,
+  LEADS_ERROR,
 } from "../types";
 
 export default (state, { type, payload }) => {
   switch (type) {
+    case GET_LEADS:
+      return {
+        ...state,
+        leads: payload,
+      };
     case ADD_LEAD:
       return {
         ...state,
@@ -43,6 +50,12 @@ export default (state, { type, payload }) => {
       return {
         ...state,
         search: state.leads.filter((lead) => lead.name.match(reg)),
+      };
+    case LEADS_ERROR:
+      return {
+        ...state,
+        leads: [],
+        errors: payload,
       };
     case CLEAR_SEARCH:
       return {

@@ -1,4 +1,5 @@
 import React, { useReducer } from "react";
+import axios from "axios";
 import LeadContext from "./LeadContext";
 import LeadReducer from "./LeadReducer";
 import {
@@ -10,6 +11,8 @@ import {
   UPDATE_LEAD,
   EDIT_LEAD,
   CLEAR_EDIT,
+  GET_LEADS,
+  LEADS_ERROR,
 } from "../types";
 
 const LeadState = (props) => {
@@ -18,37 +21,55 @@ const LeadState = (props) => {
     search: null,
     editAble: null,
     leads: [
-      {
-        id: 1,
-        name: "Cameron Campbell",
-        phone: "954 253 1234",
-        email: "email@email.com",
-        contactType: "Non-contacted",
-        notes: "First contact explained wasnt interested",
-        isSold: false,
-      },
-      {
-        id: 2,
-        name: "Brandon Garrett",
-        phone: "786 333 1234",
-        email: "email2@email.com",
-        contactType: "Contacted",
-        notes: "First contact explained wasnt interested",
-        isSold: false,
-      },
-      {
-        id: 3,
-        name: "John Dope",
-        phone: "786 333 4321",
-        email: "email2@email.com",
-        contactType: "Sale-Pending",
-        notes: "First contact explained wasnt interested",
-        isSold: false,
-      },
+      // {
+      //   id: 1,
+      //   name: "Cameron Campbell",
+      //   phone: "954 253 1234",
+      //   email: "email@email.com",
+      //   contactType: "Non-contacted",
+      //   notes: "First contact explained wasnt interested",
+      //   isSold: false,
+      // },
+      // {
+      //   id: 2,
+      //   name: "Brandon Garrett",
+      //   phone: "786 333 1234",
+      //   email: "email2@email.com",
+      //   contactType: "Contacted",
+      //   notes: "First contact explained wasnt interested",
+      //   isSold: false,
+      // },
+      // {
+      //   id: 3,
+      //   name: "John Dope",
+      //   phone: "786 333 4321",
+      //   email: "email2@email.com",
+      //   contactType: "Sale-Pending",
+      //   notes: "First contact explained wasnt interested",
+      //   isSold: false,
+      // },
     ],
+    errors: null,
   };
 
   const [state, dispatch] = useReducer(LeadReducer, initialState);
+
+  // get leads
+
+  const getLeads = async () => {
+    try {
+      const res = await axios.get("/leads");
+      dispatch({
+        type: GET_LEADS,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: LEADS_ERROR,
+        payload: err.response.msg,
+      });
+    }
+  };
 
   const addLead = (lead) => {
     lead.id = Date.now();
@@ -110,6 +131,7 @@ const LeadState = (props) => {
         filterLead: state.filterLead,
         search: state.search,
         editAble: state.editAble,
+        getLeads,
         addLead,
         removeLead,
         updateLead,

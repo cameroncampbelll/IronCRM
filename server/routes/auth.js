@@ -5,6 +5,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 
+// user model
+
 const User = require("../models/User");
 
 router.get("/", auth, async (req, res) => {

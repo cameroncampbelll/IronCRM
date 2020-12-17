@@ -42,6 +42,7 @@ router.post(
           id: user.id,
         },
       };
+
       jwt.sign(
         payload,
         process.env.SECRET,
@@ -49,8 +50,8 @@ router.post(
           expiresIn: 3600,
         },
         (error, token) => {
-          if (err) throw err;
-          res.send({ token });
+          if (error) throw error;
+          res.status(200).json({ token });
         }
       );
     } catch (err) {
