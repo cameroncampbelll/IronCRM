@@ -14,7 +14,7 @@ const Navbar = () => {
         <span className="sm-hide">|</span>
         <li>
           <a href="#!">
-            <span className="logout-button">Logout</span>
+            <span className="logout-button">Log Out</span>
             <i className=""></i>
           </a>
         </li>

@@ -7,7 +7,17 @@ body {
 
 /* login page */
 
+.login-fields {
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .login-title {
+  display: flex;
+  justify-content: center;
   margin-top: 35px;
   margin-left: 35px;
 }
@@ -21,6 +31,56 @@ body {
   color: #32c2fe;
 }
 
+
+.sign-in-btn {
+  background-color: #6b6b6b;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 15px 25px;
+  width: 25%;
+  margin-top: 40px;
+  margin-left: 35px;
+  margin-bottom: 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+}
+
+.sign-in-btn:hover {
+  background-color: #32c2fe;
+  color: white;
+}
+
+/* register page */
+
+.register-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.register-inputs {
+  display: flex;
+  flex-direction: row;
+  margin-left: 35px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  padding: 10px 10px;
+  width: 40%;
+  border: none;
+  border-bottom: 2px solid #32c2fe;
+}
+
+.question {
+  display: flex;
+  justify-content: center;
+}
 
 /* nav bar */
 
@@ -69,42 +129,74 @@ body {
 
 /* lead filter */
 
+.search-function {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 33%;
+}
+
 .toggle {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   margin: 35px;
   margin-bottom: -10px;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 33%;
+}
+
+.lead {
+  align-items: center;
 }
 
 /* search bar */
 
 .search {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   margin-top: 5px;
-  margin-left: 35px;
+  /* margin-left: 35px; */
   border: none;
   border-bottom: 2px solid #32c2fe;
-  padding: 10px 10px;
 }
 
 /* add */
 
 .add-contact {
-  margin-bottom: -1px;
-  margin-left: 35px;
+  display: flex; 
+  justify-content: center;
+  margin-bottom: 5px;
 }
 
 .add-field {
   display: flex;
   flex-direction: column;
-  position: relative;
-  margin-left: 35px;
+  justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
+.whole-add-field {
+  display: flex;
+  justify-content: center;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+}
+
 .add-comp {
   display: flex;
-  margin-left: 35px;
+  justify-content: center;
   margin-right: 10px;
   margin-top: 10px;
   padding: 10px 10px;
@@ -116,7 +208,7 @@ body {
 form {
   display: flex;
   flex-direction: column;
-  position: relative;
+  justify-content: center;
 }
 
 /* contact type - leadform, leadcounter */
@@ -129,11 +221,11 @@ form {
   padding: 15px 25px;
   width: 25%;
   margin-top: 10px;
-  margin-left: 35px;
   margin-bottom: 35px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   font-size: 16px;
   transition-duration: 0.4s;
 }
@@ -144,17 +236,36 @@ form {
 }
 
 .options-label {
-  margin-left: 35px;
+  display: flex;
+  justify-content: center;
   margin-bottom: 5px;
 }
 
 .container {
-  padding-left: 35px;
+  padding: 15px;
+}
+
+.options {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
 }
 
 .lead-counter {
-  width: 30%;
+  width: 60%;
   margin-left: 35px;
+  text-align: left;
+  line-height: 1.4em;
+}
+
+.fullcounter {
+  display: flex;
+  justify-content: center;
+}
+
+.counter-row {
+  font-weight: normal;
+  width: 80%;
   display: flex;
   justify-content: flex-start;
   line-height: 1.4em;
@@ -173,7 +284,6 @@ form {
   margin-top: 40px;
   margin-left: 35px;
   margin-bottom: 35px;
-  /* try something with line height? */
 }
 
 .buttons {
@@ -211,4 +321,5 @@ form {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }

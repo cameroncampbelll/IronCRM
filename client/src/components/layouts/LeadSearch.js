@@ -12,7 +12,7 @@ const LeadSearch = () => {
     }
   };
   return (
-    <div>
+    <div className='search-function'>
       <input
         ref={searchValue}
         type="text"

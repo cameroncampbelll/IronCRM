@@ -27,23 +27,26 @@ const Register = () => {
 
   return (
     <div className="register">
-      <h1>Sign Up</h1>
-      <form onSubmit={submit}>
+      {/* <h1>Sign Up</h1> */}
+      <form className='register-form' onSubmit={submit}>
         <input
+          className='register-inputs'
           type="text"
           name="name"
-          placeholder="name"
+          placeholder="Name"
           value={name}
           onChange={handleChange}
         />
         <input
+          className='register-inputs'
           type="email"
           name="email"
-          placeholder="email"
+          placeholder="Email"
           value={email}
           onChange={handleChange}
         />
         <input
+          className='register-inputs'
           type="password"
           name="password"
           placeholder="Password"
@@ -51,6 +54,7 @@ const Register = () => {
           onChange={handleChange}
         />
         <input
+          className='register-inputs'
           type="password"
           name="password2"
           placeholder="Confirm Password"
@@ -67,7 +71,7 @@ const Register = () => {
           </button>
         )}
         <p>
-          Already have an account? <Link to="/login">Login</Link>{" "}
+          Already have an account? <Link className='sign-up-btn' to="/login">Log in</Link>{" "}
         </p>
       </div>
     </div>

@@ -57,7 +57,7 @@ const LeadForm = () => {
         {" "}
         {editAble !== null ? "Edit Contact" : "Add Contact"}
       </h1>
-      <form onSubmit={onSubmit}>
+      <form className='whole-add-field' onSubmit={onSubmit}>
         <div className="add-field">
           <input
             className="add-comp"
@@ -125,19 +125,21 @@ const LeadForm = () => {
             />
           </label>
         </div>
-        <input
-          type="submit"
-          value={editAble !== null ? "Update Lead" : "Add Contact"}
-          className="btn"
-        ></input>
-        {editAble !== null ? (
+        <div className='btns'>
           <input
-            onClick={clearEdit}
-            value="Cancel"
-            type="button"
-            className="btn clear"
-          />
-        ) : null}
+            type="submit"
+            value={editAble !== null ? "Update Lead" : "Add Contact"}
+            className="btn"
+          ></input>
+          {editAble !== null ? (
+            <input
+              onClick={clearEdit}
+              value="Cancel"
+              type="button"
+              className="btn-clear"
+            />
+          ) : null}
+        </div>
       </form>
     </div>
   );

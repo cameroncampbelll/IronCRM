@@ -12,31 +12,31 @@ const LeadCounter = () => {
     leads.filter((lead) => sold.contactType === type).length;
 
   return (
-    <div>
+    <div className='fullcounter'>
       <table className='lead-counter'>
         <tbody>
-          <tr>
+          <tr >
             <th>Contact Type</th>
             <th>In Queue</th>
             <th>Sold</th>
           </tr>
-          <tr>
-            <th>Non-Contacted</th>
+          <tr >
+            <th className='counter-row'>Non-Contacted</th>
             <td>{inQueueByType("Non-contacted")}</td>
             <td>{soldByType("Non-contacted")}</td>
           </tr>
-          <tr>
-            <th>Contacted</th>
+          <tr >
+            <th className='counter-row'>Contacted</th>
             <td>{inQueueByType("Contacted")}</td>
             <td>{soldByType("Contacted")}</td>
           </tr>
-          <tr>
-            <th>Sale-Pending</th>
+          <tr >
+            <th className='counter-row'>Sale-Pending</th>
             <td>{inQueueByType("Sale-Pending")}</td>
             <td>{soldByType("Sale-Pending")}</td>
           </tr>
-          <tr>
-            <th>Total</th>
+          <tr >
+            <th className='counter-row'>Total</th>
             <td>{totalInQueue}</td>
             <td>{totalSold}</td>
           </tr>
