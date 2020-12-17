@@ -35,6 +35,13 @@ const LeadForm = () => {
       [event.target.name]: event.target.value,
     });
   };
+
+  const handleRadioChange = (event) => {
+    setLead({
+      ...lead,
+      contactType: event.target.value,
+    });
+  }
   const onSubmit = (event) => {
     event.preventDefault();
     if (editAble !== null) {
@@ -51,6 +58,8 @@ const LeadForm = () => {
       });
     }
   };
+
+
   return (
     <div className="invite-section">
       <h1 className="add-contact">
@@ -92,19 +101,44 @@ const LeadForm = () => {
             onChange={handleChange}
           />
         </div>
+
+
+
         <h2 className="options-label">Contact Type</h2>
         <div className="options">
-          <label className="container">
-            Non-contacted
-            <input
-              type="radio"
-              name="Non-contacted"
-              value="Non-contacted"
-              onChange={handleChange}
-              checked={lead.contactType === "Non-contacted"}
-            />
-          </label>
-          <label className="container">
+
+          <input
+            type="radio"
+            name="Non-Contacted"
+            value="Non-Contacted"
+            onChange={handleRadioChange}
+            checked={lead.contactType === "Non-Contacted"}
+          />
+          <label>Non-Contacted</label>
+
+          <input
+            type="radio"
+            name="Contacted"
+            value="Contacted"
+            onChange={handleRadioChange}
+            checked={lead.contactType === "Contacted"}
+          />
+          <label>Contacted</label>
+
+          <input
+            type="radio"
+            name="Sale-Pending"
+            value="Sale-Pending"
+            onChange={handleRadioChange}
+            checked={lead.contactType === "Sale-Pending"}
+          />
+          <label>Sale-Pending</label>
+
+
+
+
+
+          {/* <label className="container">
             Contacted
             <input
               type="radio"
@@ -123,7 +157,10 @@ const LeadForm = () => {
               onChange={handleChange}
               checked={lead.contactType === "Sale-Pending"}
             />
-          </label>
+         </label> */}
+
+
+
         </div>
         <div className='btns'>
           <input
