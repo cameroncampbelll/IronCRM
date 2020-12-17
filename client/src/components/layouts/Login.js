@@ -28,13 +28,8 @@ const Login = (props) => {
 
   return (
     <div className="login">
-<<<<<<< HEAD
       <h1 className="login-title">Log In</h1>
       <form className="login-fields" onSubmit={submit}>
-=======
-      <h1 className='login-title'>Log In</h1>
-      <form className='login-fields' onSubmit={submit}>
->>>>>>> 55d07ec94d45d8937bc8efee1b865ba95a181f14
         <input
           className="add-comp"
           type="email"
@@ -69,17 +64,48 @@ const Login = (props) => {
           </button>
         )}
         <p>
-<<<<<<< HEAD
           Don't have an account?{" "}
           <Link to="/register" className="sign-up-btn">
             Sign Up
           </Link>{" "}
-=======
-          Don't have an account? <Link to="/register" className='sign-up-btn'>Sign Up</Link>{" "}
->>>>>>> 55d07ec94d45d8937bc8efee1b865ba95a181f14
         </p>
       </div>
-    </div >
+      {/* lava lamp */}
+      <div className="lavalamp">
+        <div class="lamp">
+          <div class="lava">
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob top"></div>
+            <div class="blob bottom"></div>
+          </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="10"
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                result="goo"
+              />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+    </div>
   );
 };
 

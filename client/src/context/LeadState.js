@@ -70,7 +70,7 @@ const LeadState = (props) => {
       });
     }
   };
-
+  //  add lead
   const addLead = (lead) => {
     lead.id = Date.now();
     lead.isSold = false;
