@@ -18,8 +18,8 @@ const Login = () => {
   };
   return (
     <div className="login">
-      <h1 className='login-title'>Login</h1>
-      <form onSubmit={submit}>
+      <h1 className='login-title'>Log In</h1>
+      <form className='login-fields' onSubmit={submit}>
         <input
           className='add-comp'
           type="email"
@@ -36,11 +36,11 @@ const Login = () => {
           value={password}
           onChange={handleChange}
         />
-        <input type="submit" value="Sign In" className="btn" />
+        <input type="submit" value="Sign In" className="sign-in-btn" />
       </form>
       <div className="question">
         <p>
-          Dont have an account? <Link to="/register" className='sign-up-btn'>Sign Up</Link>{" "}
+          Don't have an account? <Link to="/register" className='sign-up-btn'>Sign Up</Link>{" "}
         </p>
       </div>
     </div>
