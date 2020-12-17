@@ -20,13 +20,8 @@ const Login = () => {
   };
   return (
     <div className="login">
-<<<<<<< HEAD
-      <h1 className="login-title">Login</h1>
-      <form onSubmit={submit}>
-=======
       <h1 className='login-title'>Log In</h1>
       <form className='login-fields' onSubmit={submit}>
->>>>>>> 494242a41554214023f6c3ef8f980745c712447b
         <input
           className="add-comp"
           type="email"
@@ -61,14 +56,10 @@ const Login = () => {
           </button>
         )}
         <p>
-<<<<<<< HEAD
-          Dont have an account? <Link to="/register">Sign Up</Link>{" "}
-=======
           Don't have an account? <Link to="/register" className='sign-up-btn'>Sign Up</Link>{" "}
->>>>>>> 494242a41554214023f6c3ef8f980745c712447b
         </p>
       </div>
-    </div>
+    </div >
   );
 };
 
