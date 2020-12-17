@@ -28,8 +28,13 @@ const Login = (props) => {
 
   return (
     <div className="login">
+<<<<<<< HEAD
       <h1 className="login-title">Log In</h1>
       <form className="login-fields" onSubmit={submit}>
+=======
+      <h1 className='login-title'>Log In</h1>
+      <form className='login-fields' onSubmit={submit}>
+>>>>>>> 55d07ec94d45d8937bc8efee1b865ba95a181f14
         <input
           className="add-comp"
           type="email"
@@ -64,13 +69,17 @@ const Login = (props) => {
           </button>
         )}
         <p>
+<<<<<<< HEAD
           Don't have an account?{" "}
           <Link to="/register" className="sign-up-btn">
             Sign Up
           </Link>{" "}
+=======
+          Don't have an account? <Link to="/register" className='sign-up-btn'>Sign Up</Link>{" "}
+>>>>>>> 55d07ec94d45d8937bc8efee1b865ba95a181f14
         </p>
       </div>
-    </div>
+    </div >
   );
 };
 

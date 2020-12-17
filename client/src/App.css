@@ -130,25 +130,23 @@ body {
 
 .search-function {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  width: 33%;
+  width: 100%;
+  margin-top: 45px;
 }
 
 .toggle {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   margin: 35px;
-  margin-bottom: -10px;
 }
 
 .filter {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: center;
-  width: 33%;
 }
 
 .lead {
@@ -160,9 +158,8 @@ body {
 .search {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  margin-top: 5px;
-  /* margin-left: 35px; */
+  margin-top: 35px;
+  width: 33%;
   border: none;
   border-bottom: 2px solid #32c2fe;
 }
@@ -197,7 +194,8 @@ body {
   display: flex;
   justify-content: center;
   margin-right: 10px;
-  margin-top: 10px;
+  margin-left: 10px;
+  margin-top: 20px;
   padding: 10px 10px;
   width: 40%;
   border: none;
@@ -221,6 +219,8 @@ form {
   width: 25%;
   margin-top: 10px;
   margin-bottom: 35px;
+  margin-left: 10px;
+  margin-right: 10px;
   text-align: center;
   text-decoration: none;
   display: flex;
@@ -246,6 +246,7 @@ form {
 
 .options {
   margin-top: 15px;
+  margin-bottom: 15px;
   display: flex;
   justify-content: center;
 }
