@@ -6,3 +6,7 @@ export const REMOVE_LEAD = "REMOVE_LEAD";
 export const UPDATE_LEAD = "UPDATE_LEAD";
 export const EDIT_LEAD = "EDIT_LEAD";
 export const CLEAR_EDIT = "CLEAR_EDIT";
+export const SUCCESS_REGISTER = "SUCCESS_REGISTER";
+export const SUCCESS_LOGIN = "SUCCESS_LOGIN";
+export const FAIL_LOGIN = "FAIL_LOGIN";
+export const FAIL_REGISTER = "FAIL_REGISTER";
