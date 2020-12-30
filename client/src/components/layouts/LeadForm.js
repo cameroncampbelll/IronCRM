@@ -27,7 +27,9 @@ const LeadForm = () => {
     notes: "",
   });
 
-  const { name, phone, email, contactType, notes } = lead;
+  // contactType bellow removed for deploy
+
+  const { name, phone, email, notes } = lead;
 
   const handleChange = (event) => {
     setLead({
@@ -41,7 +43,7 @@ const LeadForm = () => {
       ...lead,
       contactType: event.target.value,
     });
-  }
+  };
   const onSubmit = (event) => {
     event.preventDefault();
     if (editAble !== null) {
@@ -59,14 +61,13 @@ const LeadForm = () => {
     }
   };
 
-
   return (
     <div className="invite-section">
       <h1 className="add-contact">
         {" "}
         {editAble !== null ? "Edit Contact" : "Add Contact"}
       </h1>
-      <form className='whole-add-field' onSubmit={onSubmit}>
+      <form className="whole-add-field" onSubmit={onSubmit}>
         <div className="add-field">
           <input
             className="add-comp"
@@ -102,11 +103,8 @@ const LeadForm = () => {
           />
         </div>
 
-
-
         <h2 className="options-label">Contact Type</h2>
         <div className="options">
-
           <input
             type="radio"
             name="Non-Contacted"
@@ -134,10 +132,6 @@ const LeadForm = () => {
           />
           <label>Sale-Pending</label>
 
-
-
-
-
           {/* <label className="container">
             Contacted
             <input
@@ -158,11 +152,8 @@ const LeadForm = () => {
               checked={lead.contactType === "Sale-Pending"}
             />
          </label> */}
-
-
-
         </div>
-        <div className='btns'>
+        <div className="btns">
           <input
             type="submit"
             value={editAble !== null ? "Update Lead" : "Add Contact"}

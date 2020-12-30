@@ -11,7 +11,7 @@ import {
   LEADS_ERROR,
 } from "../types";
 
-export default (state, { type, payload }) => {
+const LeadReducer = (state, { type, payload }) => {
   switch (type) {
     case GET_LEADS:
       return {
@@ -71,3 +71,5 @@ export default (state, { type, payload }) => {
       return state;
   }
 };
+
+export default LeadReducer;
