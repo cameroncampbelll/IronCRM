@@ -3,13 +3,16 @@ import LeadContext from "../../context/LeadContext";
 
 const LeadCounter = () => {
   const { leads } = useContext(LeadContext);
+  if (!leads) return <h1>Loading</h1>;
   const totalInQueue = leads.length;
   const sold = Array.isArray(leads) && leads.filter((lead) => lead.isSold);
   const totalSold = sold.length;
   const inQueueByType = (type) =>
-    leads && leads.filter((lead) => lead.contactType === type).length;
+    Array.isArray(leads) &&
+    leads.filter((lead) => lead.contactType === type).length;
   const soldByType = (type) =>
-    leads && leads.filter((lead) => sold.contactType === type).length;
+    Array.isArray(leads) &&
+    leads.filter((lead) => sold.contactType === type).length;
 
   return (
     <div className="fullcounter">
