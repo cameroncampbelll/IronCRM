@@ -14,7 +14,7 @@ const Leads = () => {
       {search !== null
         ? search.map((lead) => <Lead key={lead.id} lead={lead} />)
         : leads
-            .filter((lead) => !filterLead || lead.isSold)
+            ?.filter((lead) => !filterLead || lead.isSold)
             .map((lead) => <Lead key={lead.id} lead={lead} />)}
     </div>
   );
