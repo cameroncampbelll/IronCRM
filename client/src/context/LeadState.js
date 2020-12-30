@@ -66,7 +66,7 @@ const LeadState = (props) => {
     } catch (err) {
       dispatch({
         type: LEADS_ERROR,
-        payload: err.response.msg,
+        payload: err && err?.response?.msg,
       });
     }
   };
