@@ -3,7 +3,7 @@ import LeadContext from "../../context/LeadContext";
 
 const LeadCounter = () => {
   const { leads } = useContext(LeadContext);
-  if (!leads) return <h1>Loading</h1>;
+  if (!leads) return <h1>Loading...</h1>;
   const totalInQueue = leads.length;
   const sold = Array.isArray(leads) && leads.filter((lead) => lead.isSold);
   const totalSold = sold.length;
